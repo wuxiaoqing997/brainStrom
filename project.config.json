@@ -1,0 +1,68 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.93",
+	"appid": "wx53625e028829c2c9",
+	"projectname": "one",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "答题",
+					"pathName": "pages/answer/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "结果",
+					"pathName": "pages/result/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "排名",
+					"pathName": "pages/rankingList/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加",
+					"pathName": "pages/addQuestion/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "解析",
+					"pathName": "pages/explain/index",
+					"query": ""
+				}
+			]
+		}
+	}
+}

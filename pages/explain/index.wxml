@@ -1,0 +1,26 @@
+<view class='container'>
+  <view class='explain_wrap'>
+    <view class='title'>
+      <view class='title_boder'></view>
+      题目解析
+    </view>
+    <view class='question_wrap'>
+      <view class='question_name_wrap'>
+        <label class='question_name_label'>题目名称：</label>
+        <view class='question_name'>放双方</view>
+      </view>
+      <view class='question_name_wrap'>
+        <label class='question_name_label'>题目描述：</label>
+        <view class='question_name'>放双方</view>
+      </view>
+      <view class='question_name_wrap'>
+        <label class='question_name_label'>正确答案：</label>
+        <view class='question_name'>放双方</view>
+      </view>
+      <view class='question_name_wrap'>
+        <label class='question_name_label'>你的答案：</label>
+        <view class='question_name'>放双方</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,29 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/addQuestion/index",
+    "pages/answer/index",
+    "pages/checkQuestion/index",
+    "pages/result/index",
+    "pages/rankingList/index",
+    "pages/explain/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "头脑风暴战",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/addQuestion/index",
+        "text": "添加"
+      }
+    ]
+  }
+}

@@ -1,0 +1,125 @@
+page{
+  width: 100%;
+  height: 100%;
+}
+.container{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column; 
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  background-image: url('http://oofhxj2ur.bkt.clouddn.com/58b509ad4224f.jpg');
+  background-position: center;
+  background-origin: content-box;
+  background-size: cover;
+  background-repeat: no-repeat; 
+}
+.top{
+  padding-right: 40rpx;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: row-reverse;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  line-height: 80rpx;
+  height: 80rpx;
+  font-size: 32rpx;
+}
+.question_type{
+  margin-right: 316rpx;
+  width: 140rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 20rpx;
+  background: linear-gradient(to right, #CDB7B5 0% ,#CDC1C5 100%);
+  color: rgba(255, 255, 255, 0.8);
+}
+.left_time{
+  color: #FF3030;
+}
+.advance_submit{
+  margin-left: 30rpx;
+  width: 140rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: linear-gradient(to right, #CDB7B5 0% ,#CDC1C5 100%);
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 20rpx;
+  text-align: center;
+}
+.middle{
+  margin-top: 40rpx;
+  padding-left: 20rpx;
+  width: 96%;
+  max-height: 800rpx;
+}
+.question_detial{
+  text-indent: 20rpx;
+  text-align: left;
+  width: 78%;
+  max-height: 400rpx;
+  word-break: break-all;
+  overflow: auto;
+  color: #1A1A1A;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.result_list{
+  margin-top: 30rpx;
+  width: 100%;
+  max-height: 300rpx;
+}
+.result_item{
+  border-radius: 12rpx;
+  margin-top: 20rpx;
+  padding-left: 18rpx;
+  display: flex;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  color: #292929;
+}
+.result_choosed{
+  width: 500rpx;
+  border: 1rpx solid #000;
+}
+.bottom{
+  margin-top: 490rpx;
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: stretch;
+  font-size: 32rpx;
+}
+.left_question{
+  margin-left: 20rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 40rpx;
+  color: #828282;
+}
+.skip{
+  margin-right: 20rpx;
+  width: 150rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: linear-gradient(to right, #CDB7B5 0% ,#CDC1C5 100%);
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 20rpx;
+  text-align: center;
+}
+.next{
+  margin-right: 10rpx;
+  width: 150rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: linear-gradient(to right, #CDB7B5 0% ,#CDC1C5 100%);
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 20rpx;
+  text-align: center;
+}

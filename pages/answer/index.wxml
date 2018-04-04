@@ -1,0 +1,23 @@
+<view class='container'>
+  <view class='top'>
+    <view class='advance_submit' bindtap='submitResult'>提交</view>
+    <view class='left_time'>00:00</view>
+    <view class='question_type'>单选题</view>
+  </view>
+  <view class='middle'>
+    
+    <view class='question_detial'>
+      世界上当兵周帆淡淡康凡扥心思扥不要扥嘉宾许ssss晋亨宝森当金刚符一个凡人_______
+    </view>
+    <view class='result_list'>
+      <view class='result_item result_choosed'>A.发的</view>
+      <view class='result_item'>A.逢人</view>
+      <view class='result_item'>A.度而已</view>
+      <view class='result_item'>A.aaa</view>
+    </view>
+  </view>
+  <view class='bottom'>
+    <view class='next'>下一题</view>
+    <view class='skip'>跳过此题</view>
+  </view>
+</view>
