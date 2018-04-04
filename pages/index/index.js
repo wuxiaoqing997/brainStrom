@@ -51,7 +51,7 @@ Page({
         })
       }
     })
-    console.log(this.data,'data')
+    console.log(_this.data,'data')
     console.log('openId', this.data.openId)
   },
 
