@@ -1,23 +1,21 @@
 <view class='container'>
   <view class='top'>
-    <view class='advance_submit' bindtap='submitResult'>提交</view>
-    <view class='left_time'>00:00</view>
+    <view class='advance_submit' bindtap='endResult'>结束答题</view>
+    <view class='left_time'>{{second}}</view>
     <view class='question_type'>单选题</view>
   </view>
   <view class='middle'>
-    
     <view class='question_detial'>
-      世界上当兵周帆淡淡康凡扥心思扥不要扥嘉宾许ssss晋亨宝森当金刚符一个凡人_______
+      {{describe}}
     </view>
     <view class='result_list'>
-      <view class='result_item result_choosed'>A.发的</view>
-      <view class='result_item'>A.逢人</view>
-      <view class='result_item'>A.度而已</view>
-      <view class='result_item'>A.aaa</view>
+      <block wx:if='{{answerList && answerList.length > 0 }}'>
+        <view class="result_item {{num == index ?'result_choosed':''}}" wx:for="{{answerList}}" wx:for-index="index" wx:for-item="item" wx:key='this' data-num="{{index}}" bindtap='chooseAnswer'>● {{item}}</view>
+      </block>
     </view>
   </view>
   <view class='bottom'>
-    <view class='next'>下一题</view>
-    <view class='skip'>跳过此题</view>
+    <view class='next' bindtap='submitResult'>提交</view>
+    <view class='skip' bindtap='skipQuestion'>跳过此题</view>
   </view>
 </view>

@@ -1,0 +1,58 @@
+page{
+  width: 100%;
+  height: 100%;
+}
+image{
+  width: 100%;
+  height: 100%;
+}
+.container{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column; 
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  background-image: url('http://oofhxj2ur.bkt.clouddn.com/575145cbf2cb2_1024.jpg');
+  background-position: center;
+  background-origin: content-box;
+  background-size: cover;
+  background-repeat: no-repeat; 
+}
+.top{
+  position: relative;
+  margin-top: 80rpx;
+  display: flex;
+  width: 100%;
+  height: 200rpx;
+}
+.avatar{
+  margin-left: 100rpx;
+  width: 150rpx;
+  height: 150rpx;
+}
+.pic{
+  border-radius: 8rpx;
+}
+.name{
+  margin-top: 50rpx;
+  margin-left: 20rpx;
+}
+.golden{
+  position: absolute;
+  left: 66rpx;
+  top: -30rpx;
+  width: 80rpx;
+  height: 80rpx;
+}
+.bottom{
+  margin-top: 10rpx;
+  width: 100%;
+  height: 300rpx;
+  padding-left: 220rpx;
+  padding-top: 20rpx;
+}
+.total_answer,right_count,wrong_count,lives{
+  margin-bottom: 10rpx;
+}

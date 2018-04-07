@@ -1,0 +1,17 @@
+<view class='container'>
+  <view class='top'>
+    <view class='golden'>
+      <image src='http://oofhxj2ur.bkt.clouddn.com/%E5%A5%96%E7%AB%A0.png'></image>
+    </view>
+    <view class='avatar'>
+      <image src='{{avatarValue}}' class='pic'></image>
+    </view>
+    <view class='name'>{{nameValue}}</view>
+  </view>
+  <view class='bottom'>
+    <view class='total_answer'>共答题：{{answerCount}}</view>
+    <view class='right_count'>共答对：{{rightCount}}</view>
+    <view class='wrong_count'>共答错：{{wrongCount}}</view>
+    <view class='lives'>剩余体力：{{livesCount}}</view>
+  </view>
+</view>

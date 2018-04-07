@@ -48,7 +48,7 @@ page{
 .question_wrap{
   padding-top: 80rpx;
   padding-left: 70rpx;
-  height: 550rpx;
+  height: 480rpx;
   width: 600rpx;
 }
 .question_name_wrap{
@@ -67,4 +67,17 @@ page{
   font-size: 36rpx; 
   word-wrap:break-word; 
   word-break:normal;
+}
+.back_to_answer{
+  margin-left: 480rpx;
+  width: 180rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 32rpx;
+  background-color: rgba(196, 196, 196, 0.5);
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 10rpx;
+  text-align: center;
+  border: 1rpx dotted #000;
+
 }

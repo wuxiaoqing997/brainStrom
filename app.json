@@ -6,7 +6,8 @@
     "pages/checkQuestion/index",
     "pages/result/index",
     "pages/rankingList/index",
-    "pages/explain/index"
+    "pages/explain/index",
+    "pages/profile/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

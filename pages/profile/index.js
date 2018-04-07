@@ -4,17 +4,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userList: [],
-    rank: 0,
+    avatarValue:'',
+    nameValue:'',
+    idValue:'',
+    wrongCount: 0,
+    rightCount: 0,
+    livesCount: 100,
+    answerCount: 0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let id = this.returnOpenId()
-    let url = `https://wuxiaoqing.club/i/rank/get?uuid=${id}`
-    let that = this
+    this.getInfo()
+    let id = this.data.idValue
+    let url = 'https://wuxiaoqing.club//i/user/info?uuid=${id}'
     wx.request({
       url: url,
       method: 'get',
@@ -22,16 +27,7 @@ Page({
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       success: function (res) {
-        console.log(`https://wuxiaoqing.club/i/rank/get?uuid=${id}`, res.data)
-        let data = res.data.data
-        console.log(data.list,'data')
-        if(data.list && data.list.length > 0){
-          that.setData({
-            userList: data.list,
-            rank: data.rank
-          })
-        }
-        console.log(that.data)
+        console.log(res.data)
       }
     })
   },
@@ -85,16 +81,12 @@ Page({
     
   },
   //获取用户信息
-  returnOpenId: () => {
-    let value = wx.getStorageSync('openId')
-    if (value.length != 0) {
-      return value
-    } else {
-      wx.showToast({
-        title: '请稍候再试',
-        icon: 'loading',
-        duration: 2000
-      })
-    }
-  },
+  getInfo: function(){
+    let idValue = wx.getStorageSync('openId')
+    let nameValue = wx.getStorageSync('name')
+    let avatarValue = wx.getStorageSync('avatar')
+    this.setData({
+      idValue,nameValue,avatarValue
+    })
+  }
 })

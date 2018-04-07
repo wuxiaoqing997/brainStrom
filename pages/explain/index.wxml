@@ -7,20 +7,23 @@
     <view class='question_wrap'>
       <view class='question_name_wrap'>
         <label class='question_name_label'>题目名称：</label>
-        <view class='question_name'>放双方</view>
+        <view class='question_name'>{{name}}</view>
       </view>
       <view class='question_name_wrap'>
         <label class='question_name_label'>题目描述：</label>
-        <view class='question_name'>放双方</view>
+        <view class='question_name'>{{describe}}</view>
       </view>
       <view class='question_name_wrap'>
         <label class='question_name_label'>正确答案：</label>
-        <view class='question_name'>放双方</view>
+        <view class='question_name'>{{right}}</view>
       </view>
       <view class='question_name_wrap'>
         <label class='question_name_label'>你的答案：</label>
-        <view class='question_name'>放双方</view>
+        <view class='question_name'>{{yours}}</view>
       </view>
+    </view>
+    <view class='back_to_answer' bindtap='backToAnswer'>
+      继续答题
     </view>
   </view>
 </view>

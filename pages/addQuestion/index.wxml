@@ -14,11 +14,16 @@
       <input class='result_a' name='result_d' placeholder='答案D'  placeholder-class='placeholder'></input>
     </view>
     <view class='question_setting'>
-      <label class='right_result'>单选</label><switch name='questionType' color='#FF8C00'></switch><label class='right_result'>多选</label>
       <label class='right_result right_label'>正确答案：</label>
-        <picker-view indicator-style="height: 50px;" class='picker' value="{{value}}" name='current_result'>
+        <picker-view indicator-style="height: 50px;" class='picker' value="{{value}}" name='current_result' bindchange='changeType'>
           <picker-view-column>
-            <view wx:for="{{resultList}}" wx:key='this'>{{item}}</view>
+            <view wx:for="{{resultList}}" wx:key='this' wx:index='index' data-num='{{index}}'>{{item}}</view>
+          </picker-view-column>
+           <picker-view-column>
+               <view wx:for="{{questionType}}" class='choose_type'  wx:key='this' wx:index='index' data-num='{{index}}'>{{item}}</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{level}}" class='choose_type'  wx:key='this' wx:index='index' data-num='{{index}}'>{{item}}</view>
           </picker-view-column>
         </picker-view>
     </view>

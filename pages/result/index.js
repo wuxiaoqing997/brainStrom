@@ -64,13 +64,13 @@ Page({
   },
   //重新开始
   restart: function(){
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../answer/index'
     })
   },
   //提交结果
   submitResult: function(){
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../rankingList/index'
     })
   }

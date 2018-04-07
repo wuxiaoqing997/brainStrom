@@ -11,90 +11,18 @@
         <view class='user_name_title num'>Name</view>
         <view class='score num'>Score</view>
     </view>
-    <view class='user_item'>
-      <view class='user_num'>1</view>
+    <view class='user_item' wx:for='{{userList}}' wx:key='this'>
+      <view class='user_num'>{{item.rank}}</view>
       <view class='user_cover'>
-        <image src='../../images/123.jpg' class='cover'></image>
+        <image src='{{item.avatarUrl}}' class='cover'></image>
       </view>
-      <view class='user_name'>one</view>
-      <view class='user_score'>80</view>
-    </view>
-        <view class='user_item'>
-      <view class='user_num'>1</view>
-      <view class='user_cover'>
-        <image src='../../images/123.jpg' class='cover'></image>
-      </view>
-      <view class='user_name'>one</view>
-      <view class='user_score'>80</view>
-    </view>
-        <view class='user_item'>
-      <view class='user_num'>1</view>
-      <view class='user_cover'>
-        <image src='../../images/123.jpg' class='cover'></image>
-      </view>
-      <view class='user_name'>one</view>
-      <view class='user_score'>80</view>
-    </view>
-        <view class='user_item'>
-      <view class='user_num'>1</view>
-      <view class='user_cover'>
-        <image src='../../images/123.jpg' class='cover'></image>
-      </view>
-      <view class='user_name'>one</view>
-      <view class='user_score'>80</view>
-    </view>
-        <view class='user_item'>
-      <view class='user_num'>1</view>
-      <view class='user_cover'>
-        <image src='../../images/123.jpg' class='cover'></image>
-      </view>
-      <view class='user_name'>one</view>
-      <view class='user_score'>80</view>
-    </view>
-        <view class='user_item'>
-      <view class='user_num'>1</view>
-      <view class='user_cover'>
-        <image src='../../images/123.jpg' class='cover'></image>
-      </view>
-      <view class='user_name'>one</view>
-      <view class='user_score'>80</view>
-    </view>
-        <view class='user_item'>
-      <view class='user_num'>1</view>
-      <view class='user_cover'>
-        <image src='../../images/123.jpg' class='cover'></image>
-      </view>
-      <view class='user_name'>one</view>
-      <view class='user_score'>80</view>
-    </view>
-        <view class='user_item'>
-      <view class='user_num'>1</view>
-      <view class='user_cover'>
-        <image src='../../images/123.jpg' class='cover'></image>
-      </view>
-      <view class='user_name'>one</view>
-      <view class='user_score'>80</view>
-    </view>
-        <view class='user_item'>
-      <view class='user_num'>1</view>
-      <view class='user_cover'>
-        <image src='../../images/123.jpg' class='cover'></image>
-      </view>
-      <view class='user_name'>one</view>
-      <view class='user_score'>80</view>
-    </view>
-        <view class='user_item'>
-      <view class='user_num'>1</view>
-      <view class='user_cover'>
-        <image src='../../images/123.jpg' class='cover'></image>
-      </view>
-      <view class='user_name'>one</view>
-      <view class='user_score'>80</view>
+      <view class='user_name'>{{item.nickName}}</view>
+      <view class='user_score'>{{item.score}}</view>
     </view>
   </view>
   <view class='tip'>
-    <view class='cheer'>你目前的分数是</view>
-    <view class='this_score'>56</view>
+    <view class='cheer'>你目前的排名是</view>
+    <view class='this_score'>{{rank}}</view>
     <view class='cheer'>，继续保持哟！</view>
   </view>
 </view>

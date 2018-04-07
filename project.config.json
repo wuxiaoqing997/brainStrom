@@ -61,6 +61,12 @@
 					"name": "解析",
 					"pathName": "pages/explain/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "主页",
+					"pathName": "pages/profile/index",
+					"query": ""
 				}
 			]
 		}
