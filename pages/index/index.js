@@ -9,7 +9,7 @@ Page({
     openId: '',
     nickName: '',
     avatarUrl: '',
-    livesCount: 0,
+    livesCount: '',
     questionValue: 1,
     levelValue: 1,
   },
@@ -19,55 +19,50 @@ Page({
    */
   onLoad: function (options) {
     let _this = this
+    wx.setStorageSync('questionValue', 1)
+    wx.setStorageSync('levelValue', 1)
     wx.login({
       //获取code
       success: function (res) {
-        let code = res.code //返回code
-        //console.log('res', res.code)
-        let appId = 'wx53625e028829c2c9'
-        let secret = '6ceb7fcb6187289ae43192eaf3a3bdd1'
+        let js_code = res.code //返回code
         let openId = ''
         let nickName = ''
         let avatarUrl = ''
-        wx.request({
-          url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appId + '&secret=' + secret + '&js_code=' + code + '&grant_type=authorization_code',
-          data: {},
-          header: {
-            'content-type': 'json'
-          },
-          success: function (res) {
-            openId = res.data.openid //返回openId
-            console.log('open',openId)
-          }
-        })
+       // console.log(js_code)
         wx.getUserInfo({
           success: function (res) {
+            console.log(res)
             if (res != null && res.userInfo != null) {
               let result = res.userInfo
               nickName = result.nickName
               avatarUrl = result.avatarUrl
-              _this.setData({
-                openId, nickName, avatarUrl
-              })
+              // _this.setData({
+              //   openId, nickName, avatarUrl
+              // })
+              // console.log(openId,'openS')
+            
               //存储用户openId
-              _this.setOpenId(openId, nickName, avatarUrl)
+              //console.log(openId, nickName, avatarUrl)
               wx.request({
                 url: 'https://wuxiaoqing.club/i/user/update-info',
-                method: 'post',
+                method: 'POST',
                 header: {
                   'content-type': 'application/x-www-form-urlencoded' // 默认值
                 },
                 data: {
-                  uuid: openId,
+                  js_code,
                   avatarUrl,
                   nickName,
                 },
                 success: function (res) {
-                  let data = res.data.data
-                  console.log(res.data, 'res')
+                   let data = res.data.data
+                  //console.log(res.data, 'res')
+                  openId = data.openid
                   _this.setData({
                     livesCount: data.powerCount,
+                    openId, nickName, avatarUrl,
                   })
+                  _this.setOpenId(openId, nickName, avatarUrl)
                 }
               })
             }
@@ -88,11 +83,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    let uuid = this.data.openId
-    let nickName = this.data.nickName
-    let avatarUrl = this.data.avatarUrl
-    console.log(uuid, nickName, avatarUrl,'datadatatest')
-    let that = this
+    // let uuid = this.data.openId
+    // let nickName = this.data.nickName
+    // let avatarUrl = this.data.avatarUrl
+    // console.log(uuid, nickName, avatarUrl,'datadatatest')
+    // let that = this
 
   },
 
@@ -134,11 +129,12 @@ Page({
   begin: function() {
     this.takeResult()
     let that = this
+    let livesCount = that.data.livesCount
     let questionValue = that.data.questionValue
     let levelValue = that.data.levelValue
-    let livesCount = that.data.livesCount
+    that.takeLevel(questionValue, levelValue)
     let url = `../answer/index?questionValue=${questionValue}&levelValue=${levelValue}&livesCount=${livesCount}`
-    wx.navigateTo({
+    wx.redirectTo({
       url: url
     })
   },
@@ -166,14 +162,20 @@ Page({
     let myDate = new Date()
     let year = myDate.getFullYear()
     let month = myDate.getMonth() + 1
-    let day = myDate.getDay()
+    let day = myDate.getDate()
+    //console.log(day)
     let key = `resultList${year}-${month}-${day}`
-    console.log(key,'key')
+    //console.log(key,'key')
     let value = wx.getStorageSync(key) 
-    console.log(typeof value,'value')
+   // console.log(typeof value,'value')
     if (value.length === 0) {
       wx.setStorageSync(key, [])
-      console.log(wx.getStorageSync(key),'aaaa')
+     // console.log(wx.getStorageSync(key),'aaaa')
     }
+  },
+  //获取题型和难度
+  takeLevel: function (questionValue, levelValue){
+      wx.setStorageSync('questionValue', questionValue)
+      wx.setStorageSync('levelValue', levelValue)
   }
 })

@@ -32,7 +32,7 @@ page{
   display: flex;
   flex-wrap: nowrap;
   margin-top: 30rpx;
-  margin-right: 418rpx;
+  margin-right: 399rpx;
   padding-left: 0;
   width: 38%;
   height: 60rpx;

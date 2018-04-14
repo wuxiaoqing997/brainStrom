@@ -18,16 +18,26 @@ Page({
    */
   onLoad: function (options) {
     this.getInfo()
+    let that = this
     let id = this.data.idValue
-    let url = 'https://wuxiaoqing.club//i/user/info?uuid=${id}'
+ //   console.log(id,'idid')
+    let url = `https://wuxiaoqing.club/i/user/info?uuid=${id}`
     wx.request({
       url: url,
-      method: 'get',
+      method: 'GET',
       header: {
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       success: function (res) {
-        console.log(res.data)
+       // console.log(res.data.data)
+        let data = res.data.data
+        let wrongCount = data.wrongTimes
+        let answerCount = data.submitTimes
+        let rightCount = data.rightTimes
+        let livesCount = data.powerCount
+        that.setData({
+          wrongCount, answerCount, rightCount, livesCount,
+        })
       }
     })
   },
@@ -85,6 +95,7 @@ Page({
     let idValue = wx.getStorageSync('openId')
     let nameValue = wx.getStorageSync('name')
     let avatarValue = wx.getStorageSync('avatar')
+   // console.log(idValue)
     this.setData({
       idValue,nameValue,avatarValue
     })

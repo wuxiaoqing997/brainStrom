@@ -1,0 +1,82 @@
+page{
+  width: 100%;
+  height: 100%;
+}
+image{
+  width: 100%;
+  height: 100%;
+}
+.container{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column; 
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  background-image: url('http://oofhxj2ur.bkt.clouddn.com/5a41b004687cd.jpg');
+  background-position: center;
+  background-origin: content-box;
+  background-size: cover;
+  background-repeat: repeat; 
+}
+.title{
+  margin-top: 20rpx;
+  width: 200rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+.item_wrap{
+  margin-top: 20rpx;
+  width: 100%;
+  height: 82%;
+}
+.item{
+  width: 96%;
+  margin-left: 2%;
+  margin-bottom: 20rpx;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8rpx;
+}
+.item_title_wrap{
+  padding-left: 20rpx;
+  width: 98%;
+  height: 80rpx;
+  line-height: 80rpx;
+  vertical-align: middle;
+  display: flex;
+}
+.item_title{
+  width: 490rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.item_agree{
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+.item_disagree{
+  margin-left: 10rpx;
+}
+.item_show{
+  margin-left: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.item_describe{
+  padding: 10rpx;
+  height: 300rpx;
+  font-size: 38rpx;
+  border-top: 1rpx solid #ABABAB;
+}
+.take_more{
+  margin-top: 20rpx;
+  font-size: 32rpx;
+}

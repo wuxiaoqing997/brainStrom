@@ -7,7 +7,8 @@
     "pages/result/index",
     "pages/rankingList/index",
     "pages/explain/index",
-    "pages/profile/index"
+    "pages/profile/index",
+    "pages/historyDetail/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -16,14 +17,39 @@
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "white",
     "list": [
       {
+        "selectedIconPath": "images/homepage (1).png",
+        "iconPath": "images/homepage.png",
         "pagePath": "pages/index/index",
         "text": "首页"
       },
       {
+        "selectedIconPath": "images/addition (1).png",
+        "iconPath": "images/addition.png",
         "pagePath": "pages/addQuestion/index",
         "text": "添加"
+      },
+      {
+        "selectedIconPath": "images/selection (1).png",
+        "iconPath": "images/selection.png",
+        "pagePath": "pages/rankingList/index",
+        "text": "排行榜"
+      },
+      {
+        "selectedIconPath": "images/createtask (1).png",
+        "iconPath": "images/createtask.png",
+        "pagePath": "pages/checkQuestion/index",
+        "text": "审题"
+      },
+      {
+        "selectedIconPath": "images/addressbook (1).png",
+        "iconPath": "images/addressbook.png",
+        "pagePath": "pages/profile/index",
+        "text": "我的"
       }
     ]
   }

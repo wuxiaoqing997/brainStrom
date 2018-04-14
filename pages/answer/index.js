@@ -25,20 +25,31 @@ Page({
     let level = options.levelValue || 1
     let typeValue = options.questionValue || 2
     let lives = options.livesCount || 100
+    if(lives < 1){
+      wx.showToast({
+        title: '体力值不足，请明日再进行参与',
+        icon: 'none',
+        duration: 2000
+      })
+      let url = `../rankingList/index`
+      wx.redirectTo({
+        url: url,
+      })
+    }
     _this.setData({
       level,typeValue,lives
     })
     let url = `https://wuxiaoqing.club/i/question/get?level=${level}&type=${typeValue}`
     wx.request({
       url: url,
-      method: 'get',
+      method: 'GET',
       header: {
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       success: function (res) {
         if(res && res.data != null){
           let data = res.data.data
-          console.log(data,'data')
+         // console.log(data,'data')
           let answerList = data.answers
           let describe = data.describe
           let questionId = data.questionId
@@ -132,7 +143,7 @@ Page({
     let url = `https://wuxiaoqing.club/i/question/submit`
     wx.request({
       url: url,
-      method: 'post',
+      method: 'POST',
       header: {
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
@@ -143,20 +154,21 @@ Page({
       },
       success: function (res) {
         let data = res.data.data
-        console.log(data,'dat')
+       // console.log(data,'dat')
         that.setData({
           lives: data.powerCount
         })
         rightAnswerNum = data.rightAnswer
         rightAnswer = that.data.answerList[rightAnswerNum]
         let isRight = data.isRight
-        console.log('name', name, describe, rightAnswer, answer)
+       // console.log('name', name, describe, rightAnswer, answer)
         let obj = {
-          'name': name,
-          'describe': describe,
-          'isRight': isRight,
-          'answer': answer,
-          'rightAnswer': rightAnswer,
+          id,
+          name,
+          describe,
+          isRight,
+          answer,
+          rightAnswer,
         }
         that.saveResult(obj)
         let questionObj = {
@@ -217,6 +229,7 @@ Page({
     // let value = wx.getStorageSync(key) 
     // value.push(data)
     // wx.setStorageSync(key, value)
+    
     let url = `../answer/index?questionValue=${this.data.typeValue}&levelValue=${this.data.level}&livesCount=${this.data.lives}`
     wx.redirectTo({
       url: url
@@ -225,6 +238,7 @@ Page({
   //存储答案
   saveResult:function(obj){
     let data = {
+      'id': obj.id,
       'name': obj.name,
       'describe': obj.describe,
       'isRight': obj.isRight,
@@ -234,17 +248,23 @@ Page({
     let myDate = new Date()
     let year = myDate.getFullYear()
     let month = myDate.getMonth() + 1
-    let day = myDate.getDay()
+    let day = myDate.getDate()
     let key = `resultList${year}-${month}-${day}`
     let value = wx.getStorageSync(key) 
     value.push(data)
     wx.setStorageSync(key, value)
-    console.log(wx.getStorageSync(key) ,'key5')
+ //   console.log(wx.getStorageSync(key) ,'key5')
   },
   //存储题目
   saveQuestion:function(obj){
     let id = obj.id
     let result = obj
     wx.setStorageSync(id, result)
+  },
+  //返回主页
+  back:function(){
+    wx.switchTab({
+      url: '../index/index',
+    })
   }
 })

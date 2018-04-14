@@ -1,17 +1,22 @@
 <view class='container'>
-  <view class='left_lives'>体力值：102</view>
+  <view class='left_lives'>体力值：{{livesCount}}</view>
   <view class='title'>
     <view class='title_boder'></view>
     历史答题情况
   </view>
   <view class='result_wrap'>
-    <block wx:if="{{result.length > 0}}">
+    <block wx:if="{{value.length > 20}}">
       <swiper indicator-dots="true" autoplay="false" class='swiper_item' indicator-active-color="rgba(119,136,153,0.5)" circular="false">
         <block wx:for="{{result}}" wx:for-index="idx" wx:key="item">
           <swiper-item >
-            <view class='swiper_item_wrap'>
+            <view class='swiper_item_wrap' >
               <block wx:for="{{item}}" wx:for-index="id" wx:key="i">
-                <view class='result_item'>{{id}}</view>
+                <block wx:if="{{idx == 0}}">
+                  <view class='result_item' data-num='{{item.id}}' bindtap='getQuestion'>{{id + 1}}</view>
+                </block>
+                <block wx:else>
+                  <view class='result_item' data-num='{{item.id}}' bindtap='getQuestion'>{{idx * 20 + id + 1}}</view>
+                </block>
               </block>
             </view>
           </swiper-item>
@@ -19,11 +24,11 @@
       </swiper>
     </block>
     <block wx:else>
-      <view class='result_item'  wx:for="{{result}}" wx:for-index="idx">{{idx}}</view>
+      <view class='result_item'  data-num='{{item.id}}' wx:for="{{result}}" wx:for-index="idx" wx:key="i" bindtap='getQuestion' >{{idx + 1}}</view>
     </block>
   </view>
   <view class='result_tip'>
-    今日共计答题50题，答对30题，加油！
+    今日共计答题{{answerCount}}题，答对{{rightCount}}题，加油！
   </view>
   <view class='bottom'>
     <view class='once_again' bindtap='restart'>

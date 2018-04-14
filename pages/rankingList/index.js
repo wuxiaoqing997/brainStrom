@@ -17,21 +17,21 @@ Page({
     let that = this
     wx.request({
       url: url,
-      method: 'get',
+      method: 'GET',
       header: {
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       success: function (res) {
-        console.log(`https://wuxiaoqing.club/i/rank/get?uuid=${id}`, res.data)
+       // console.log(`https://wuxiaoqing.club/i/rank/get?uuid=${id}`, res.data)
         let data = res.data.data
-        console.log(data.list,'data')
+       // console.log(data.list,'data')
         if(data.list && data.list.length > 0){
           that.setData({
             userList: data.list,
             rank: data.rank
           })
         }
-        console.log(that.data)
+        //console.log(that.data)
       }
     })
   },

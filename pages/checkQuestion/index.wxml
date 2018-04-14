@@ -1,0 +1,24 @@
+<view class='container'>
+  <view class='title'>题目大全</view>
+  <scroll-view scroll-y enable-back-to-top class='item_wrap' >
+    <view class='item' wx:for="{{questionList}}" wx:key="item" data-idx="{{index}}" data-show='{{item.showUrl}}' 
+    bindtap="expandDetail">
+      <view class='item_title_wrap'>
+        <view class='item_title'>{{item.questionName}}</view>
+        <view class='item_agree' catchtap='changeAgree' data-id="{{index}}" data-change='{{item.change}}' data-questionid="{{item.question_id}}">
+          <image src='{{item.agreeUrl}}'></image>
+        </view>
+        <view class='item_disagree item_agree'  data-id="{{index}}" catchtap='changeDisagree' data-change='{{item.change}}' data-questionid="{{item.question_id}}">
+          <image src='{{item.disagreeUrl}}'></image>
+        </view>
+        <view class='item_show item_agree item_disagree'>
+          <image src='{{item.showUrl}}'></image>
+        </view>
+      </view>
+      <view class='item_describe' wx:if="{{ item.flag }}">
+        {{item.describe}}
+      </view>
+    </view>
+  </scroll-view>
+  <view class='take_more' bindtap='takeMore'>### 加载更多 ###</view>
+</view>

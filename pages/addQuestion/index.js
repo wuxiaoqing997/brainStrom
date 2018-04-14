@@ -121,7 +121,7 @@ Page({
     if (questionName.length != 0 && questionDescirbe.length != 0 && aValue.length != 0 && bValue.length != 0 && dValue.length != 0) {
       wx.request({
         url: 'https://wuxiaoqing.club/i/question/add',
-        method: 'post',
+        method: 'POST',
         header: {
           'content-type': 'application/x-www-form-urlencoded' // 默认值
         },

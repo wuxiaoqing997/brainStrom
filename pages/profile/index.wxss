@@ -56,3 +56,7 @@ image{
 .total_answer,right_count,wrong_count,lives{
   margin-bottom: 10rpx;
 }
+.golden_img{
+  width: 150rpx;
+  height: 150rpx;
+}

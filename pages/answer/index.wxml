@@ -2,7 +2,7 @@
   <view class='top'>
     <view class='advance_submit' bindtap='endResult'>结束答题</view>
     <view class='left_time'>{{second}}</view>
-    <view class='question_type'>单选题</view>
+    <view class='question_type' bindtap='back'>返回主页</view>
   </view>
   <view class='middle'>
     <view class='question_detial'>

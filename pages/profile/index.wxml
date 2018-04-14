@@ -7,6 +7,9 @@
       <image src='{{avatarValue}}' class='pic'></image>
     </view>
     <view class='name'>{{nameValue}}</view>
+    <view class='golden_img'>
+      <image src='../../images/奖杯.png'></image>
+    </view>
   </view>
   <view class='bottom'>
     <view class='total_answer'>共答题：{{answerCount}}</view>

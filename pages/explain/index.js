@@ -126,7 +126,7 @@ Page({
     let myDate = new Date()
     let year = myDate.getFullYear()
     let month = myDate.getMonth() + 1
-    let day = myDate.getDay()
+    let day = myDate.getDate()
     let key = `resultList${year}-${month}-${day}`
     let value = wx.getStorageSync(key)
     value.push(data)
